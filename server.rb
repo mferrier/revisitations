@@ -5,6 +5,9 @@ module RandoRotate
 end
 
 class RandoRotate::Server < Sinatra::Base
+  ROOT_PATH = File.expand_path(File.dirname(__FILE__))
+  set :root, ROOT_PATH
+
   register(Sinatra::Logger)
   set :logger_level, :info
 
