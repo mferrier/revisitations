@@ -6,6 +6,8 @@ gem 'sinatra-contrib'
 gem 'data_uri'
 gem 'activesupport'
 gem 'mime-types', '~> 2.3'
+gem 'curb'
+
 group :development do
   gem 'debugger'
 end
