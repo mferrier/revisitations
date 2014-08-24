@@ -1,5 +1,6 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
+gem 'heroku'
 gem 'sinatra', '1.4.5'
 gem 'sinatra-logger'
 gem 'haml', '4.0.5'
