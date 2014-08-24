@@ -1,1 +1,1 @@
-web: bundle exec rackup start -p $PORT -E $RACK_ENV
+web: bundle exec rackup -p $PORT -E $RACK_ENV
