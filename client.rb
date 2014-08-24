@@ -4,9 +4,9 @@ require 'curb'
 require 'json'
 require 'debugger'
 
-# url = "http://revisit-rando-rotate.dev:3000/service"
-url = "http://revisit-rando-rotate.herokuapp.com/service"
-# url = "http://hiiamchris.com:4200/service"
+url = "http://revisitations.dev:3000/rando-rotate"
+# url = "http://revisitations.herokuapp.com/"
+# url = "http://hiiamchris.com:4200/"
 
 path = ARGV.first
 
@@ -22,7 +22,9 @@ mime_type = MIME::Types.type_for(path).first
 data_uri = URI::Data.build(:content_type => mime_type.content_type, :data => file)
 payload = JSON.dump({:content => {:data => data_uri.to_s}, :meta => {}})
 
-c = Curl::Easy.new(url) do |curl| 
+service_url = url.chomp("/") + "/service"
+
+c = Curl::Easy.new(service_url) do |curl| 
   curl.headers["Content-Type"] = "application/json"
   curl.verbose = true
 end

@@ -6,5 +6,5 @@ Bundler.require
 require './server'
 
 map '/' do
-  run RandoRotate::Server
+  run Revisitations::Server
 end
