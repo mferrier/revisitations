@@ -45,11 +45,15 @@ class Revisitations::Server < Sinatra::Base
 
   helpers do
     def log(msg, level = :info)
-      LOG.send(level, msg.to_s)
+      Revisitations::Server.log(msg, level)
     end
 
     def pong
       "PONG!"
     end    
+  end
+
+  def self.log(msg, level = :info)
+    LOG.send(level, msg.to_s)
   end
 end

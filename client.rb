@@ -5,7 +5,7 @@ require 'json'
 require 'debugger'
 
 url = "http://revisitations.dev:3000/rando-rotate"
-# url = "http://revisitations.herokuapp.com/"
+# url = "http://revisitations.herokuapp.com/rando-rotate"
 # url = "http://hiiamchris.com:4200/"
 
 path = ARGV.first
@@ -31,6 +31,11 @@ end
 
 c.on_success do |easy|
   response = JSON.parse(easy.body_str)
+  if err = response['meta']['error']
+    puts "Error: #{err}"
+    Kernel.exit 1
+  end
+  
   response_data = URI::Data.new(response['content']['data'])
   ext = File.extname(path)
   outpath = File.join(File.dirname(path), File.basename(path, ext) + "-out" + ext)

@@ -21,4 +21,8 @@ class Revisitations::Service
 
   def run
   end
+
+  def log(msg, level = :info)
+    Revisitations::Server.log(msg, level)
+  end
 end
