@@ -48,11 +48,11 @@ class Revisitations::Server < Sinatra::Base
       end
       
       if service.content['data'].length > MAX_DATA_LENGTH
-        set_error "Output data length exceeds max"
+        service.set_error "Output data length exceeds max"
       end
 
       JSON.dump({'content' => service.content, 'meta' => service.meta})
-      end
+    end
   end
 
   helpers do
