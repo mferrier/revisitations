@@ -19,6 +19,8 @@ class Revisitations::Server < Sinatra::Base
 
   LOG = Logger.new(STDOUT)
 
+  MAX_DATA_LENGTH = 1024*1024
+
   configure :development do
     register Sinatra::Reloader
     LOG.level = Logger::DEBUG
@@ -38,9 +40,19 @@ class Revisitations::Server < Sinatra::Base
     end
 
     post "/#{service_name}/service" do
-      service = Revisitations::Service[service_name].new(request.body.read)
-      service.run()
-    end
+      begin
+        service = Revisitations::Service[service_name].new(request.body.read)
+        service.run()
+      rescue Exception => e
+        service.set_error(e)
+      end
+      
+      if service.content['data'].length > MAX_DATA_LENGTH
+        set_error "Output data length exceeds max"
+      end
+
+      JSON.dump({'content' => service.content, 'meta' => service.meta})
+      end
   end
 
   helpers do
