@@ -1,5 +1,5 @@
 {
-  "name": "Revisitations - the ruby revisit.link framework",
+  "name": "Revisitations",
   "description": "Easily write and deploy services for the http://revisit.link service",
   "repository": "https://github.com/mferrier/revisitations",
   "logo": "https://github.com/mferrier/revisitations/sinatra.jpg",
