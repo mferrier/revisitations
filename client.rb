@@ -4,7 +4,7 @@ require 'curb'
 require 'json'
 require 'debugger'
 
-url = "http://revisitations.dev:3000/rando-rotate"
+url = "http://revisitations.dev:3000/flip"
 # url = "http://revisitations.herokuapp.com/rando-rotate"
 # url = "http://hiiamchris.com:4200/"
 

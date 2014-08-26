@@ -25,9 +25,12 @@ class Revisitations::Service
     params = JSON.parse(body)
     @content = params.fetch("content", @content)
     @meta = params.fetch("meta", @meta)
+    
     # keep a copy so that if something goes wrong and we just want to pass the
     # original request back
     @original_data = @content['data']
+
+    # URI::Data object of the incoming data. Use data_uri.data for the binary data.
     @data_uri = URI::Data.new(@original_data) 
     @content_type = @data_uri.content_type
     @mime_type = MIME::Types[@content_type].first
@@ -42,7 +45,7 @@ class Revisitations::Service
     Revisitations::Server.log(msg, level)
   end
 
-  # handle an error by setting an error in the meta of the response and revert
+  # Handle an error by setting an error in the meta of the response and revert
   # the data back to whatever was originally posted (don't break da chain)
   def set_error(e)
     meta['error'] = e.inspect

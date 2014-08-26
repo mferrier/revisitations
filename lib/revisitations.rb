@@ -1,4 +1,6 @@
 module Revisitations
 end
 
-require "revisitations/rando_rotate"
+Dir.glob(File.join(File.expand_path("..", __FILE__), 'revisitations', '*.rb')).each do |path|
+  require "revisitations/#{File.basename(path, '.rb')}"
+end

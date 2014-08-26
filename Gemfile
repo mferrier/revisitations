@@ -7,6 +7,7 @@ gem 'data_uri'
 gem 'activesupport'
 gem 'mime-types', '~> 2.3'
 gem 'curb'
+gem 'rake'
 
 group :development do
   gem 'debugger'
