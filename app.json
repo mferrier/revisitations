@@ -2,6 +2,6 @@
   "name": "Revisitations",
   "description": "Easily write and deploy services for the http://revisit.link service",
   "repository": "https://github.com/mferrier/revisitations",
-  "logo": "https://github.com/mferrier/revisitations/tree/master/sinatra.jpg",
+  "logo": "https://raw.githubusercontent.com/mferrier/revisitations/master/sinatra.jpg",
   "keywords": ["ruby", "sinatra", "revisit.link"]
 }
