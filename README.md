@@ -12,6 +12,15 @@ bundle exec rake services:add
 
 ##### Multi-buildpack
 
-If you want to install imagemagick on your heroku instance, uncomment the lines in .buildpack and set the buildpack URL:
+If you want to install imagemagick on your heroku instance, add these lines to .buildpack:
 
+```
+https://github.com/mcollina/heroku-buildpack-imagemagick
+https://github.com/heroku/heroku-buildpack-ruby.git
+```
+
+and set the buildpack URL:
+
+```
 heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi
+```
