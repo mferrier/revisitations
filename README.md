@@ -6,6 +6,10 @@ Ruby service framework for http://revisit.link services.
 
 bundle exec rake services:add
 
+##### Run locally
+
+bundle exec rackup
+
 ##### Deploy your own
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
