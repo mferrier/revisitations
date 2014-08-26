@@ -4,9 +4,8 @@ require 'curb'
 require 'json'
 require 'debugger'
 
-url = "http://revisitations.dev:3000/flip"
-# url = "http://revisitations.herokuapp.com/rando-rotate"
-# url = "http://hiiamchris.com:4200/"
+# set this then run bundle exec ruby client.rb path/to/some/image.jpg
+url = "http://localhost:9292/flip"
 
 path = ARGV.first
 
