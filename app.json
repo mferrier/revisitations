@@ -1,6 +1,6 @@
 {
   "name": "Revisitations",
-  "description": "Easily write and deploy services for the http://revisit.link service",
+  "description": "Write and deploy http://revisit.link services in ruby",
   "repository": "https://github.com/mferrier/revisitations",
   "logo": "https://raw.githubusercontent.com/mferrier/revisitations/master/sinatra.jpg",
   "keywords": ["ruby", "sinatra", "revisit.link"]
