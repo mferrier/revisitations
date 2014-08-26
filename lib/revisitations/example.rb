@@ -1,8 +1,9 @@
 require 'revisitations/service'
 
-class Revisitations::RandoRotate < Revisitations::Service
+# Example service that rotates the incoming file by a random amount
+class Revisitations::Example < Revisitations::Service
   def run
-    tmp = Tempfile.new(['rando', "." + extension])
+    tmp = Tempfile.new(['foo', "." + extension])
     tmp.binmode
     tmp.write(data_uri.data)
     tmp.flush
@@ -26,4 +27,4 @@ class Revisitations::RandoRotate < Revisitations::Service
   end
 end
 
-Revisitations::Service.register('rando-rotate', Revisitations::RandoRotate)
+Revisitations::Service.register('example', Revisitations::Example)
